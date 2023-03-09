@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useLocation} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useGetTopMoviesQuery } from '../redux/services/tmdbAPI';
 import { useGetDiscoverMoviesQuery } from '../redux/services/tmdbAPI';
@@ -6,9 +6,11 @@ import { useGetMovieGenresQuery } from '../redux/services/tmdbAPI'
 import { useGetTvGenresQuery } from '../redux/services/tmdbAPI'
 
 import { MovieCard, TVCard } from '../components';
+import { NavLink } from 'react-router-dom';
 
 const Discover = ({limit}) => {
   const dispatch = useDispatch();
+
   const { data, isFetching, error} = useGetDiscoverMoviesQuery();
 
   let tempData;
@@ -28,7 +30,7 @@ const Discover = ({limit}) => {
       <div className="w-[100%]">
         <h1 className="text-3xl text-center animate-slidedown ">{isFetching ? 'Fetching' : 'Discover'}</h1>
         <div className="w-[90%] flex justify-end">
-          <p className="text-sm text-gray-500  hover:cursor-pointer hover:text-slate-400 hover:scale-105">view all...</p>
+          {window.location.pathname === '/discover' ? null : <NavLink to="/discover" className="text-sm text-gray-500  hover:cursor-pointer hover:text-slate-400 hover:scale-105">view all...</NavLink>} 
         </div>
       </div>
       <div className="flex  flex-wrap gap-y-7 gap-x-4 w-[95%] justify-center sm:justify-between">

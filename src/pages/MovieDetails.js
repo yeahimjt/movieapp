@@ -11,6 +11,11 @@ const MovieDetails = () => {
     const {data:similardata, isFetching: similarFetching, error:similarError} = useGetMoviesBySimilarQuery(movieid);
 
     let partialData = similardata?.results?.slice(0,12)
+    const displayTrailer = () => {
+        const trailer =  moviedata?.videos.results.find(video => video.name.includes('Official Trailer'))
+        console.log(trailer)
+        return (<div className="lgg:flex flex-[0.5] mb-0 justify-start items-center  lgg:visible hidden"><YouTube videoId={trailer.key}/></div>)
+    }
     console.log(moviedata)
     if (isFetching) return <h1>Loading</h1> ;
     if (error) return <h1>Error</h1>
@@ -18,7 +23,7 @@ const MovieDetails = () => {
         <>
         
         <div className="flex flex-col justify-evenly 3xl:justify-center 3xl:flex-row m-4 sm:m-24 gap-6">
-        {moviedata.videos && <div className="lgg:flex flex-[0.5] mb-0 justify-start items-center  lgg:visible hidden"><YouTube className=""/></div>}
+        {moviedata?.videos ? displayTrailer() : null }
             <div className="flex max-w-[700px] bg-gray-100 p-4">
                 <div className="bg-dark ">
                     <div className="flex flex-col justify-center items-center ">
@@ -27,7 +32,7 @@ const MovieDetails = () => {
                             <div className="flex  gap-6">
                                 <div className="text-2xl flex-col">
                                     <h1>{moviedata?.title}</h1>
-                                    {moviedata?.genres.map((genre)=><div className="text-sm px-2">{genre.name}</div>)}
+                                    {moviedata?.genres.map((genre)=><div key={genre.name} className="text-sm px-2">{genre.name}</div>)}
                                 </div>
                                 <div className="flex items-start gap-1 mt-2">
                                     <AiFillStar className="text-yellow-300 mt-1"/>
