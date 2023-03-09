@@ -4,6 +4,8 @@ import { useGetMovieGenresQuery } from '../redux/services/tmdbAPI';
 import { useGetTvGenresQuery } from '../redux/services/tmdbAPI';
 import { useGetMovieByIDQuery } from '../redux/services/tmdbAPI';
 
+import { Link } from 'react-router-dom';
+
 const MovieCard = ({ data, movie, i }) => {
   const {data:movieData, isFetching:movieIsFetching, error:movieError} = useGetMovieByIDQuery(movie.id)
   
@@ -11,7 +13,8 @@ const MovieCard = ({ data, movie, i }) => {
 
   return (
     <>
-    <div className="w-[307px] bg-gray-100 p-10 shadow-2xl shadow-white-500 animate-slideup delay-1000 backdrop-blur-sm hover:bg-slate-900 hover:drop-shadow-4xl hover:scale-105 transition-all hover:cursor-pointer hover:text-white">
+    <Link to={`/movies/${movie?.id}`}>
+    <div className="w-[307px] h-[500px] bg-gray-100 p-10 shadow-2xl shadow-white-500 animate-slideup  backdrop-blur-sm hover:bg-slate-900 hover:drop-shadow-4xl hover:scale-105 transition-all hover:cursor-pointer hover:text-white">
           <div className="">
             <div className="flex justify-center items-center">
               <img className="w-[300px] h-[300px] object-fill" src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} type="img/jpg" alt="movie poster"/>
@@ -28,6 +31,7 @@ const MovieCard = ({ data, movie, i }) => {
             </div>
           </div>
     </div>
+    </Link>
     </>
   )
 }

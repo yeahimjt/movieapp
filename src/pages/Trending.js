@@ -17,7 +17,7 @@ const Trending = () => {
     <div className="flex flex-col w-full gap-4 p-4 mt-24 items-center">
       <div className="w-[100%]">
         <h1 className="text-3xl text-center ">Trending</h1>
-        <div className="w-[97%] flex justify-end ">
+        <div className="w-[90%] flex justify-end ">
           <p className="text-sm text-gray-500  hover:cursor-pointer hover:text-slate-400 hover:scale-105">view all...</p>
         </div>
       </div>

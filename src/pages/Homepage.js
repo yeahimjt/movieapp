@@ -4,7 +4,7 @@ import {Discover, Trending} from './index'
 const Homepage = () => {
   return (
     <div className="">
-        <Discover/>
+        <Discover limit={true}/>
         <Trending/>
     </div>
   )
