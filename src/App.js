@@ -1,5 +1,5 @@
 import './App.css';
-import { Discover, Trending, Homepage, MovieDetails } from '../src/pages/index'
+import { Discover, Trending, Homepage, MovieDetails, Actors, ActorDetails, TVDetails } from '../src/pages/index'
 import { Sidebar, Searchbar } from '../src/components'
 
 import { Routes, Route} from 'react-router-dom'
@@ -14,7 +14,10 @@ function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/discover" element={<Discover limit={false}/>} />
             <Route path="/trending" element={<Trending />} />
+            <Route path="/people" element={<Actors />} />
             <Route path="/movies/:movieid" element={<MovieDetails/>} />
+            <Route path="/tv/:tvid" element={<TVDetails/>} />
+            <Route path="/people/:personid" element={<ActorDetails/>} />
           </Routes>
       </div>
     </div>

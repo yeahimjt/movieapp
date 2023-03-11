@@ -1,53 +1,56 @@
+import { useGetTVByIDQuery, useGetTVBySimilarQuery } from "../redux/services/tmdbAPI";
 import { useParams } from "react-router-dom";
-import { useGetMovieByIDQuery, useGetMoviesBySimilarQuery } from "../redux/services/tmdbAPI";
-import { AiFillStar } from "react-icons/ai";
+import React from 'react'
 import YouTube from "react-youtube";
+import {AiFillStar} from 'react-icons/ai'
+import { TVCard } from "../components";
 
-import {MovieCard} from '../components/index'
-
-const MovieDetails = () => {
-    const {movieid} = useParams()
-    let filter = "movie"
-    const {data:moviedata, isFetching, error} = useGetMovieByIDQuery({filter,movieid})
-    const {data:similardata, isFetching: similarFetching, error:similarError} = useGetMoviesBySimilarQuery(movieid);
+const TVDetails = () => {
+    const {tvid} = useParams()
+    let filter = "tv"
+    const {data, isFetching, error} = useGetTVByIDQuery(tvid);
+    const {data:similardata, isFetching:similarIsFetching, error:similarError} = useGetTVBySimilarQuery(tvid);
+    if (isFetching) return <h1>Fetching</h1>
+    if (error) return <h1>Error</h1>
 
     let partialData = similardata?.results?.slice(0,12)
+    console.log(partialData)
+
     const displayTrailer = () => {
-        const trailer =  moviedata?.videos.results.find(video => video.name.includes('Official Trailer'))
+        const trailer =  data?.videos.results.find(video => video.name.includes('Official Trailer'))
         if (trailer) {
             return (<div className="lgg:flex flex-[0.5] mb-0 justify-start items-center  lgg:visible hidden"><YouTube videoId={trailer?.key}/></div>)
         }
         return null
     }
 
-    if (isFetching) return <h1>Loading</h1> ;
-    if (error) return <h1>Error</h1>
-    return (
-        <>
+  return (
+    <>
         <div className="flex flex-col justify-evenly 3xl:justify-center 3xl:flex-row m-4 sm:m-24 gap-6">
-        {moviedata?.videos ? displayTrailer() : null }
+        {data?.videos ? displayTrailer() : null }
             <div className="flex max-w-[700px] bg-gray-100 p-4">
                 <div className="bg-dark ">
                     <div className="flex flex-col justify-center items-center ">
-                        {moviedata?.poster_path ? <img className="md:h-[400px] w-[300px] flex   p-4" src={`https://image.tmdb.org/t/p/w200/${moviedata?.poster_path}`} alt="movie poster"/> : <p>Not found</p>}
+                        {data?.poster_path ? <img className="md:h-[400px] w-[300px] flex   p-4" src={`https://image.tmdb.org/t/p/w200/${data?.poster_path}`} alt="movie poster"/> : <p>Not found</p>}
                         <div className="flex flex-col  gap-6 w-full m-2">
                             <div className="flex  gap-6">
                                 <div className="text-2xl flex-col">
-                                    <h1>{moviedata?.title}</h1>
-                                    {moviedata?.genres.map((genre)=><div key={genre.name} className="text-sm px-2">{genre.name}</div>)}
+                                    <h1>{data?.name} / {data?.original_name}</h1>
+                                    {data?.genres.map((genre)=><div key={genre.name} className="text-sm px-2">{genre.name}</div>)}
                                 </div>
                                 <div className="flex items-start gap-1 mt-2">
                                     <AiFillStar className="text-yellow-300 mt-1"/>
-                                    <p>{Math.round(moviedata?.vote_average)}</p>
+                                    <p>{Math.round(data?.vote_average)}</p>
                                 </div> 
                             </div>
                             <div className="w-full">
-                                <p className="text-sm">Released {moviedata?.release_date}</p>
+                                <p className="text-sm">First Aired {data?.first_air_date}</p>
                                 <div className="flex w-full gap-4">
-                                <p className="text-sm text-left">Budget <i className="text-green-900">${moviedata?.budget}</i></p>
-                                <p className="text-sm text-center">Revenue <i className="text-green-900">{moviedata?.revenue === 0 ? `not found` : `$${moviedata?.revenue}`}</i></p>
+                                {data?.budget && <p className="text-sm text-left">Budget <i className="text-green-900">${data?.budget}</i></p>}
+                                {data?.revenue && <p className="text-sm text-center">Revenue <i className="text-green-900">{data?.revenue === 0 ? `not found` : `$${data?.revenue}`}</i></p>}
                                 </div>
-                                <p className="w-full mt-2 text-1xl font-medium">{moviedata?.overview}</p>
+
+                                <p className="w-full mt-2 text-1xl font-medium">{data?.overview}</p>
                             </div>
                         </div>
                     </div>
@@ -56,20 +59,20 @@ const MovieDetails = () => {
         </div>
         <div className="flex relative flex-col w-full">
                 <p className="text-center text-2xl p-4 py-0">Similiar Movies</p>
-                {similardata?.results.length === 0 ? 
+                {similardata?.results.length === 0 ?
                 <p className="text-center text-sm text-red-500 p-4">No Similar Movies Found</p>
                 :
                 <div className="flex w-full flex-wrap gap-6 justify-center items-center mt-4">
 
                     {partialData?.map((item,i) => {return (
 
-                        <MovieCard key={item.id} data={partialData} movie={item} i={i} filter={"movie"} />   
+                        <TVCard key={i} data={partialData} tv={item} i={i} />
                     )})}
                 </div>
                 }
             </div>
         </>
-    )
+  )
 }
 
-export default MovieDetails
+export default TVDetails
