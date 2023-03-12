@@ -66,7 +66,7 @@ const Search = () => {
             </div>
             <div className="flex  flex-wrap gap-y-7 gap-x-4 w-[95%] justify-center xll:justify-center">
                 {data?.results?.map((item,i) => (
-                    <MultiCard key={item.id} data={data} multi={item} i={i} filter={filter}/>
+                    <MultiCard key={item.id} data={data} multi={item} i={i} filter={item.media_type}/>
                 ))}
             </div>
             </>
