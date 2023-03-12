@@ -5,7 +5,7 @@ import MovieDetails from './MovieDetails'
 import ActorDetails from './ActorDetails'
 import Actors from './Actors'
 import TVDetails from './TVDetails'
-
+import Search from './Search'
 export {
     Discover,
     Trending,
@@ -14,4 +14,5 @@ export {
     ActorDetails,
     Actors,
     TVDetails,
+    Search,
 }

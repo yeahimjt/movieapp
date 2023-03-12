@@ -10,8 +10,8 @@ import { useGetTVByIDQuery } from '../redux/services/tmdbAPI';
 
 const TVCard = ({ data, tv, i }) => {
   const {data:tvData , isFetching: tvIsFetching, error: tvError} = useGetTVByIDQuery(tv?.id)
-  if (tvIsFetching) return <h1>Loading...</h1>;
-  if (tvError) return <h1>Error</h1>
+  if (tvIsFetching) return ;
+  if (tvError) return 
   return (
     <>
     <Link to={`/tv/${tv.id}`}>

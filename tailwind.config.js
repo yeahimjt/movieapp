@@ -12,10 +12,11 @@ module.exports = {
       }
     },
     animation: {
-      slideup: 'slideup 1s ease-in-out',
-      slidedown: 'slidedown 1s ease-in-out',
-      slideleft: 'slideleft 1s ease-in-out',
-      slideright: 'slideright 1s ease-in-out',
+      slideup: 'slideup 0.5s ease-in-out',
+      slidedown: 'slidedown 0.5s ease-in-out',
+      slideleft: 'slideleft 0.5s ease-in-out',
+      slideright: 'slideright 0.5s ease-in-out',
+      shake: 'shake 0.3s linear',
       wave: 'wave 1.2s linear ease-in-out',
       slowfade: 'slowfade 2.2s ease-in-out',
     },
@@ -39,6 +40,11 @@ module.exports = {
       slideright: {
         from: { opacity: 0, transform: 'translateX(20px)' },
         to: { opacity: 1, transform: 'translateX(0)' },
+      },
+      shake: {
+        '0%': {transform: 'translateX(-10px)'},
+        '50%': {transform: 'translateX(10px)'},
+        '100%': {transform: 'translateX(0px)'},
       },
       wave: {
         '0%': { transform: 'scale(0)' },

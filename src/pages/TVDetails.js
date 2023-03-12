@@ -10,8 +10,8 @@ const TVDetails = () => {
     let filter = "tv"
     const {data, isFetching, error} = useGetTVByIDQuery(tvid);
     const {data:similardata, isFetching:similarIsFetching, error:similarError} = useGetTVBySimilarQuery(tvid);
-    if (isFetching) return <h1>Fetching</h1>
-    if (error) return <h1>Error</h1>
+    if (isFetching) return 
+    if (error) return 
 
     let partialData = similardata?.results?.slice(0,12)
     console.log(partialData)
@@ -26,7 +26,7 @@ const TVDetails = () => {
 
   return (
     <>
-        <div className="flex flex-col justify-evenly 3xl:justify-center 3xl:flex-row m-4 sm:m-24 gap-6">
+        <div className="flex flex-col justify-evenly 3xl:justify-center 3xl:flex-row m-4 mb-8 sm:m-24 gap-6"> 
         {data?.videos ? displayTrailer() : null }
             <div className="flex max-w-[700px] bg-gray-100 p-4">
                 <div className="bg-dark ">
@@ -57,8 +57,8 @@ const TVDetails = () => {
                 </div>
             </div>
         </div>
-        <div className="flex relative flex-col w-full">
-                <p className="text-center text-2xl p-4 py-0">Similiar Movies</p>
+        <div className="flex relative flex-col w-full mb-16">
+                <p className="text-center text-2xl p-4 py-0">Similiar Tv Shows</p>
                 {similardata?.results.length === 0 ?
                 <p className="text-center text-sm text-red-500 p-4">No Similar Movies Found</p>
                 :

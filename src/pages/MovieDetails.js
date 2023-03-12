@@ -33,7 +33,7 @@ const MovieDetails = () => {
                         <div className="flex flex-col  gap-6 w-full m-2">
                             <div className="flex  gap-6">
                                 <div className="text-2xl flex-col">
-                                    <h1>{moviedata?.title}</h1>
+                                    {moviedata?.name ? <p>{moviedata?.name}</p> : <h1>{moviedata?.title}</h1>}
                                     {moviedata?.genres.map((genre)=><div key={genre.name} className="text-sm px-2">{genre.name}</div>)}
                                 </div>
                                 <div className="flex items-start gap-1 mt-2">
@@ -54,7 +54,7 @@ const MovieDetails = () => {
                 </div>
             </div>
         </div>
-        <div className="flex relative flex-col w-full">
+        <div className="flex relative flex-col w-full  mb-16">
                 <p className="text-center text-2xl p-4 py-0">Similiar Movies</p>
                 {similardata?.results.length === 0 ? 
                 <p className="text-center text-sm text-red-500 p-4">No Similar Movies Found</p>

@@ -11,7 +11,7 @@ const MovieCard = ({ data, movie, i, filter }) => {
 
   const {data:movieData, isFetching:movieIsFetching, error:movieError} = useGetMovieByIDQuery({ filter,movieid })
   if (movieIsFetching) return ;
-  if (movieError) return <h1>Error</h1>
+  if (movieError) return
   return (
     <>
     <Link to={filter === "movie" ? `/movies/${movie?.id}` : `/tv/${movie?.id}`}>
@@ -22,7 +22,7 @@ const MovieCard = ({ data, movie, i, filter }) => {
             </div>
             <div className="p-2">
               <div className="flex justify-between" key={movie.i} value={movie.id}>
-                <p>{movie.title}</p>
+              {movieData?.name ? <p>{movieData?.name}</p> : <h1>{movieData?.title}</h1>}
                 <div className="flex justify-center items-center gap-1">
                   <AiFillStar className="text-yellow-500"/>
                   <p>{Math.round(movie.vote_average)}</p>
