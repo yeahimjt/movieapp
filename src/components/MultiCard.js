@@ -17,13 +17,14 @@ const MultiCard = ({ data, multi, i, filter }) => {
     partPath = "movies"
   }
 
-  else if(multi?.media_type==="person") {
+  else if(multi?.known_for_department) {
     partPath="people"
   }
   else {
     partPath = "tv"
   }
-  console.log(multi)
+  console.log(partPath)
+  console.log("I am in multicard",multi)
   return (
     <>
     <Link to={`/${partPath}/${multi?.id}`}>
