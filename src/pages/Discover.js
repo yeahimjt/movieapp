@@ -57,7 +57,7 @@ const Discover = ({limit}) => {
         </div>
       </div>
       <div className="flex  flex-wrap gap-y-7 gap-x-4 w-[95%] justify-center xll:justify-center">
-      {window.location.pathname === '/discover' ? 
+      {window.location.pathname === 'yeahimjt.github.io/movieapp/discover' ? 
           <>
           <div className="flex w-[90%] mx-auto justify-between items-center ">
             <div className="flex gap-6">

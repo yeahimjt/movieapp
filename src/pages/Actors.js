@@ -47,7 +47,7 @@ if (error) return <h1>Error</h1>
       <div className="w-[100%]">
         <h1 className="text-3xl text-center animate-slidedown flex justify-center items-center gap-4 "><MdPerson4/>People</h1>
         <div className="w-[90%] flex justify-end">
-        {window.location.pathname === '/people' ?
+        {window.location.pathname === 'yeahimjt.github.io/movieapp/people' ?
           <>
           <div className="flex w-[100%] mx-auto justify-end items-center ">
             <Paginate increment={increment} decrement={decrement} page={page} />
