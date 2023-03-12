@@ -11,20 +11,20 @@ const MultiCard = ({ data, multi, i, filter }) => {
   const {data:movieData, isFetching:movieIsFetching, error:movieError} = useGetMultiQuery({filter,page})
   if (movieIsFetching) return ;
   if (movieError) return <h1>Error</h1>
-  console.log(multi)
+
   let partPath;
-  if (multi?.media_type==="movie") {
+  if (multi?.release_date) {
     partPath = "movies"
   }
 
   else if(multi?.known_for_department) {
     partPath="people"
   }
-  else {
+  else if (multi?.first_air_date){
     partPath = "tv"
   }
-  console.log(partPath)
-  console.log("I am in multicard",multi)
+
+
   return (
     <>
     <Link to={`/${partPath}/${multi?.id}`}>

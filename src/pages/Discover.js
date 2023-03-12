@@ -45,7 +45,7 @@ const Discover = ({limit}) => {
     }
 
   }
-  console.log(window.location.pathname)
+
   if (isFetching) return ;
   if (error) return <h1>Error</h1>
 

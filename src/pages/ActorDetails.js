@@ -12,19 +12,17 @@ const ActorDetails = () => {
   const [tvFilter, setTvFilter] = useState(false)
   const [filter, setFilter] = useState("movie_credits")
   const {data:known,isFetching:knownFetching,error:knownError,} = useGetPeopleKnownForQuery({filter, personid});
-  console.log(known)
+
   const updateFilters = () => {
     setMovieFilter(!movieFilter)
     setTvFilter(!tvFilter)
     if (!movieFilter) {
       setFilter("movie_credits")
-
     }
     else if (!tvFilter) {
       setFilter("tv_credits")
 
     }
-    console.log(filter)
   }
 
   if (isFetching) return ;

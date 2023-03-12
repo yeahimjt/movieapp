@@ -13,9 +13,6 @@ const [latestFilter, setLatestFilter] = useState(false)
 const [filter, setFilter] = useState("popular")
 const {data, isFetching, error} = useGetPeopleQuery({filter,page});
 
-let idk = useParams()
-console.log(idk)
-
 const increment = () => {
   setPage(page+1)
 }

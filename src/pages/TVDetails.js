@@ -14,7 +14,6 @@ const TVDetails = () => {
     if (error) return 
 
     let partialData = similardata?.results?.slice(0,12)
-    console.log(partialData)
 
     const displayTrailer = () => {
         const trailer =  data?.videos.results.find(video => video.name.includes('Official Trailer'))
