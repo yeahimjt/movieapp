@@ -42,7 +42,7 @@ const Search = () => {
         <div className="flex flex-col w-full gap-4 p-4 mt-24 items-start">
             <h1 className="text-3xl  animate-slidedown flex flex-wrap gap-4 items-center pl-8"><p>Results for </p><p className="text-2xl italic text-slate-600">{search.search}</p><p className="text-sm relative top-1 italic">with filters {filter==="multi" ? "all" : filter}</p></h1>
             
-            {data.results.length === 0 ? 
+            {data?.results?.length === 0 ? 
                 <div className="w-full">
                 <div className="flex gap-6">
                     <button value="movie" className={filter==="movie"  ? "left-0 gap-4 border-2 p-2 border-slate-600 w-[80px] bg-slate-600 text-white rounded-full" : "left-0 gap-4 border-2 p-2 border-slate-600 w-[80px] rounded-full hover:cursor-pointer hover:bg-slate-600 hover:text-white hover:scale-110" } onClick={filter==="movie" ? null : updateFilters}>Movies</button>
