@@ -55,7 +55,7 @@ const Trending = ({limit}) => {
 
       </div>
       <div className="flex  flex-wrap gap-y-7 gap-x-4 w-[95%] justify-center xll:justify-center">
-      {window.location.pathname === 'yeahimjt.github.io/movieapp/trending' ? 
+      {window.location.pathname === '/trending' ? 
           <>
           <div className="flex w-[90%] mx-auto justify-between items-center ">
             <div className="flex gap-6">
