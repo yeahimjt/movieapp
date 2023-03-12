@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 80 84" xmlns="http://www.w3.org/2000/svg">
+<path d="M50.5 2H1V83H23V53.5H40V37.5H23V21.5H50.5V2Z" stroke="#000"/>
+<path d="M44 83V25H79.5V53.5H69.5V37.5H59.5V83H44Z" stroke="#000"/>
+<path d="M65 0L67.6942 8.2918H76.4127L69.3593 13.4164L72.0534 21.7082L65 16.5836L57.9466 21.7082L60.6407 13.4164L53.5873 8.2918H62.3058L65 0Z" fill="#fff"/>
+</svg>
