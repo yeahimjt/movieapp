@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { useGetPeopleQuery } from '../redux/services/tmdbAPI'
+import { useParams } from 'react-router-dom'
 import { ActorsCard } from '../components';
 import {Paginate} from '../components';
 import { Link, NavLink } from 'react-router-dom';
@@ -11,6 +12,9 @@ const [popularFilter, setPopularFilter] = useState(true)
 const [latestFilter, setLatestFilter] = useState(false)
 const [filter, setFilter] = useState("popular")
 const {data, isFetching, error} = useGetPeopleQuery({filter,page});
+
+let idk = useParams()
+console.log(idk)
 
 const increment = () => {
   setPage(page+1)
@@ -37,7 +41,7 @@ const updateFilters = () => {
   }
 
 }
-console.log(data)
+
 if (isFetching) return  ;
 if (error) return <h1>Error</h1>
 
@@ -47,7 +51,7 @@ if (error) return <h1>Error</h1>
       <div className="w-[100%]">
         <h1 className="text-3xl text-center animate-slidedown flex justify-center items-center gap-4 "><MdPerson4/>People</h1>
         <div className="w-[90%] flex justify-end">
-        {window.location.pathname === '/movieapp/people' ?
+        {window.location.pathname === '/people' ?
           <>
           <div className="flex w-[100%] mx-auto justify-end items-center ">
             <Paginate increment={increment} decrement={decrement} page={page} />
