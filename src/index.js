@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter basename={'https://yeahimjt.github.io/movieapp'}>
+      <BrowserRouter basename={window.location.pathname || ''}>
         <App />
       </BrowserRouter>
     </Provider>
