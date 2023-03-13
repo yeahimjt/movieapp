@@ -82,7 +82,7 @@ const ActorDetails = () => {
       <div className="flex relative flex-col w-full pt-4">
         <p className="text-center text-2xl p-4 py-0">Part of crew for</p>
         <div className="flex w-full flex-wrap gap-6 justify-center items-center mt-4">
-        {window.location.pathname === `/people/${data.id}` ? 
+        {window.location.pathname === `/movieapp/people/${data.id}` ? 
           <>
           <div className="flex w-full mx-auto justify-center items-center ">
             <div className="flex gap-6">
