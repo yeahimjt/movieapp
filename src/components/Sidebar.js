@@ -22,7 +22,6 @@ const Sidebar = () => {
         <NavLink to="/discover"><div className="flex gap-4 justify-start items-center hover:text-gray-400"><MdOutlineExplore/>Discover</div></NavLink>
         <NavLink to="/trending"><div className="flex gap-4 justify-start items-center hover:text-gray-400"><FiTrendingUp/>Trending</div></NavLink>
         <NavLink to="/people"><div className="flex gap-4 justify-start items-center hover:text-gray-400"><MdPerson4/>People</div></NavLink>
-        <NavLink to="/reviews"><div className="flex gap-4 justify-start items-center hover:text-gray-400"><AiFillStar/>Reviews</div></NavLink>
       </div>
     </div>
   )

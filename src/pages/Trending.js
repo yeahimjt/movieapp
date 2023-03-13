@@ -67,7 +67,7 @@ const Trending = ({limit}) => {
           </>
           : 
           <div className="flex w-[90%] mx-auto justify-end items-center ">
-            <NavLink to="/discover" className="text-sm flex  text-gray-500  hover:cursor-pointer hover:text-slate-400 hover:scale-105">view all...</NavLink>
+            <NavLink to="/trending" className="text-sm flex  text-gray-500  hover:cursor-pointer hover:text-slate-400 hover:scale-105">view all...</NavLink>
           </div>
           }
         { tempData ? 
