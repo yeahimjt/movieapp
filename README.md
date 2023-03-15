@@ -30,8 +30,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/yeahimjt.movieapp">
+    <img src="public/fr.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Movie App</h3>
@@ -39,14 +39,10 @@
   <p align="center">
     The perfect movie app for you to browse movies/tv shows/actors/directors based on popularity or simularity!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/yeahimjt/movieapp"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://yeahimjt.github.io/movieapp">View Live</a>
   </p>
 </div>
 
@@ -80,7 +76,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://yeahimjt.github.io/movieapp)
 
 This projects main goal was to concrete my knowledge with working with APIs, Tailwind CSS and Redux. This involved handling errors, managing the data, and displaying the data cleanly for the best UX/UI experience. This project acheived it all.
 
@@ -157,7 +153,6 @@ _Below is an example of how you can instruct your audience on installing and set
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -176,9 +171,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Email - jonathanandrewtrevino@gmail.com 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -211,7 +204,7 @@ Some of the documentation and applications I used to increase roll out for proje
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: /src/assets/movieapp.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [Redux]: https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white
 [HTML5]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
