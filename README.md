@@ -151,7 +151,10 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+* Click Discover, change filter from Movies -> Tv Shows. Load new results by clicking pagination arrows. Click on card to display more information on item
+* Click Trending, change filter from Movies -> Tv Shows. Load new results by clicking pagination arrows. Click on card to display more information on item
+* Click People, load new results by clicking pagination arrows. Click on card to display more information on item
+* Enter query in search bar for what you desire to find, upon pressing enter click desired filter (Movie, Tv Show, People) and click on the correct movie/tv shows/person card to see more information.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
